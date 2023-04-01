@@ -34,6 +34,7 @@ RUN npm run test
 # Ejecutar build de produccion
 FROM node:19.2-alpine3.16 as deps-prod
 WORKDIR /app
+COPY package.json ./
 RUN npm install --prod
 
 # Para ejecutar la app
