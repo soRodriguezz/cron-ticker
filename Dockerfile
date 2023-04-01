@@ -42,6 +42,6 @@ FROM node:19.2-alpine3.16 as runner
 WORKDIR /app
 COPY --from=deps-prod /app/node_modules ./node_modules
 COPY app.js ./
-COPY tasks ./tasks
+COPY tasks/ ./tasks
 # comando para levantar app
-CMD [ "npm", "start" ]
+CMD [ "node", "app.js" ]
